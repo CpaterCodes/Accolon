@@ -1,38 +1,60 @@
 <script lang="ts">
+	let kittenTime = false;
+	const toggleKittenTime = () => {
+		kittenTime = kittenTime ? false : true;
+
+	}
 </script>
 
 <main>
     <a 
-	href="https://media.tenor.com/wL59aqQiwzAAAAAd/cat-kitty.gif"
 	target="picture"
-	on:click={() => alert("It's kitten time!")}
+	on:click={toggleKittenTime}
 	>
-		<h1> I have something to show you!!! </h1>
+		<h1>
+		{
+		kittenTime 
+		? "Kitten Time!"
+		: "I have something to show you..."
+		}
+		</h1>
 	</a>
-	<iframe name="picture" id="picture" frameborder="0"/>
+	
+	<img 
+		id="picture"
+		src="https://media.tenor.com/wL59aqQiwzAAAAAd/cat-kitty.gif"
+		hidden={!kittenTime}
+	/>
 </main>
 
 <style>
-	main {
-		font-family: fantasy;
+	h1 {
+		font-size: 4em;
+		color: beige;
 	}
 	
-	a {
-		color: lime;
+	main {
+		font-family: luminari;
+		background-color: darkred;
+		color: beige;
+		padding: 1em;
+		min-height: 50rem;
+		border-radius: 1rem;
 	}
-
-	a:hover {
+	
+	a h1:hover {
 		color: cyan;
  	}
 
-	a:visited {
-		color: orange;
-	}
- 
 	#picture {
-		border-radius: 15rem;
+		border-radius: 2rem;
 		height: 30em;
-		width: 30em;
+		width: 30rem;
  	}
+
+	@media (prefers-color-scheme: light) {
+		main { background-color: beige; color: darkred; }
+
+	}
 </style>
 

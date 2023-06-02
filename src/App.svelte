@@ -1,51 +1,30 @@
 <script lang="ts">
-	let kittenTime = false;
-	const toggleKittenTime = () => {
-		kittenTime = kittenTime ? false : true;
 
-	}
 </script>
 
 <main>
-    <a 
-	target="picture"
-	on:click={toggleKittenTime}
-	>
-		<h1>
-		{
-		kittenTime 
-		? "Kitten Time!"
-		: "I have something to show you..."
-		}
-		</h1>
-	</a>
-	
-	<img 
-		id="picture"
-		src="https://media.tenor.com/wL59aqQiwzAAAAAd/cat-kitty.gif"
-		hidden={!kittenTime}
-	/>
+	<h1>
+		Accolon
+	</h1>
 </main>
 
 <style>
 	h1 {
-		font-size: 4em;
-		color: beige;
+		font-size: max(3em, 5vw);
+		text-align: center;
+		color: whitesmoke;
+		text-shadow: cyan 0 0 0.5vw;
 	}
 	
 	main {
 		font-family: luminari;
-		background-color: darkred;
+		background-color: darkblue;
 		color: beige;
-		padding: 1em;
-		min-height: 50rem;
-		border-radius: 1rem;
+		padding: 0;
+		width: 70vw;
+		border-radius: 0.8vw;
 	}
 	
-	a h1:hover {
-		color: cyan;
- 	}
-
 	#picture {
 		border-radius: 2rem;
 		height: 30em;
@@ -53,7 +32,7 @@
  	}
 
 	@media (prefers-color-scheme: light) {
-		main { background-color: beige; color: darkred; }
+		main { background-color: beige; color: darkslateblue; }
 
 	}
 </style>
